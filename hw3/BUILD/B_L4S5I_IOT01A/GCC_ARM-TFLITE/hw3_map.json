@@ -5,7 +5,7 @@
             ".text": 55318,
             ".data": 543,
             ".bss": 12731,
-            ".text-delta": -184,
+            ".text-delta": 0,
             ".data-delta": 0,
             ".bss-delta": 0
         }
@@ -13,23 +13,23 @@
     {
         "module": "BUILD/B_L4S5I_IOT01A",
         "size": {
-            ".text": 40710,
+            ".text": 40758,
             ".data": 313,
-            ".bss": 69110,
-            ".text-delta": -264,
+            ".bss": 69258,
+            ".text-delta": 0,
             ".data-delta": 0,
-            ".bss-delta": -212
+            ".bss-delta": 0
         }
     },
     {
         "module": "[fill]",
         "size": {
-            ".text": 312,
+            ".text": 264,
             ".data": 17,
-            ".bss": 42,
+            ".bss": 46,
             ".text-delta": 0,
             ".data-delta": 0,
-            ".bss-delta": -4
+            ".bss-delta": 0
         }
     },
     {
@@ -100,10 +100,10 @@
     },
     {
         "summary": {
-            "static_ram": 85368,
-            "static_ram_delta": -216,
+            "static_ram": 85520,
+            "static_ram_delta": 0,
             "total_flash": 161400,
-            "total_flash_delta": -448
+            "total_flash_delta": 0
         }
     }
 ]

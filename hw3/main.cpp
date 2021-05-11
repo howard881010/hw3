@@ -34,6 +34,8 @@ void GestureUI(Arguments *in, Reply *out);
 void Tilt(Arguments *in, Reply *out);
 RPCFunction rpcLED(&GestureUI, "GestureUI");
 RPCFunction jud(&Tilt, "TILT");
+void flip(Arguments *in, Reply *out);
+RPCFunction change(&flip, "FLIP");
 
 int Gesture_determine();
 void Tilt_detection();
@@ -67,6 +69,10 @@ volatile bool closed = false;
 
 const char* topic = "Mbed";
 
+void flip(Arguments *in, Reply *out) {
+  mode = !mode;
+  //printf("%d", mode);
+}
 
 
 void messageArrived(MQTT::MessageData& md)
@@ -92,7 +98,7 @@ void publish_message(MQTT::Client<MQTTNetwork, Countdown>* client)
 
     MQTT::Message message;
     char buff[100];
-    sprintf(buff, "%d %f", message_num, detected_angle);
+    sprintf(buff, "%d %d %f",mode, message_num, detected_angle);
     message.qos = MQTT::QOS0;
     message.retained = false;
     message.dup = false;
@@ -412,10 +418,9 @@ void Tilt (Arguments *in, Reply *out)
             break;
         }
     }
-    if (y) {
-        t2.start(callback(&q2, &EventQueue::dispatch_forever));
-        q2.call(Tilt_detection);
-    }
+
+    t2.start(callback(&q2, &EventQueue::dispatch_forever));
+    q2.call(Tilt_detection);
 
 }
 void Tilt_detection()
