@@ -28,6 +28,7 @@ Result:
 4. Start tilt detection mode and Current_angle will show on uLCD
 5. tilt over  angle will publish the evet on screen and python will receive it and print it.
 6. When over 10 times, python will send the command to stop this mode.
-7. ![Uploading image.png…]()
+7. ![Uploading S__30973956.jpg…]()
+
 
 
